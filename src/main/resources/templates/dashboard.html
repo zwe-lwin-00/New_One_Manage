@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+<h1>Welcome to your Dashboard, <span th:text="${user.name}"></span>!</h1>
+<p>Email: <span th:text="${user.email}"></span></p>
+<p>Phone: <span th:text="${user.phone}"></span></p>
+<p>Address: <span th:text="${user.address}"></span></p>
+<p>Role: <span th:text="${user.role}"></span></p>
+
+<h2>Your Notifications</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Announce Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="notification : ${notifications}">
+    <td th:text="${notification.title}"></td>
+    <td th:text="${notification.text}"></td>
+    <td th:text="${notification.announceDate}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Add more dashboard features here -->
+</body>
+</html>
