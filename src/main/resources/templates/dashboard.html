@@ -24,6 +24,13 @@
     <td th:text="${notification.title}"></td>
     <td th:text="${notification.text}"></td>
     <td th:text="${notification.announceDate}"></td>
+    <td>
+      <form th:action="@{/users/dismiss-notification}" method="post">
+        <input type="hidden" name="notificationId" th:value="${notification.not_id}" />
+        <input type="hidden" name="user_id" th:value="${user.user_id}" />
+        <button type="submit">Close</button>
+      </form>
+    </td>
   </tr>
   </tbody>
 </table>
